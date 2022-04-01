@@ -1,0 +1,87 @@
+$white-color: #fff;
+
+.container-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "banner auth";
+}
+
+.banner {
+  grid-area: banner;
+  display: flex;
+  background-color: #6fb529;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -80px;
+    left: -80px;
+    content: "";
+    border-radius: 50%;
+    animation-name: change_color;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% ); 
+  }
+
+  &::after {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: -80px;
+    right: -80px;
+    content: "";
+    border-radius: 50%;
+    animation-name: change_color;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% ); 
+  }
+
+  @keyframes change_color {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+ 
+
+  h1 {
+    font-size: 50px;
+    color: $white-color;
+    margin-bottom: 3rem;
+    font-weight: 800;
+  }
+
+  p {
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 241, 241);
+    font-weight: 400;
+    line-height: 2rem;
+  }
+}
+
+.auth {
+  grid-area: auth;
+  background-color: #fff;
+}
+
+.center {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+}
