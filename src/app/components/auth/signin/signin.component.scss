@@ -38,6 +38,7 @@ $green: rgba(14,174,87,1);
 
         form {
             margin: 2rem 0;
+            width: 300px;
 
             .field {
                 display: flex;
@@ -56,18 +57,29 @@ $green: rgba(14,174,87,1);
                 left: 18px;
                 top: 15px;
                 color: #8b8a8b;
+                opacity: 0;
             }
 
+            input.active{
+                background-color: #fff;
+                border: 1.5px solid $green;
+            }
+
+            input:focus::placeholder{
+                opacity: 0;
+            }
+            
             input:focus ~ label,
-            input:not([value=""]):not(:focus):invalid ~ label {
+            input.active ~ label{
                 color: $green;
                 transform:  scale(0.8);
                 left: 3px;
                 top: -12px;
                 background-color: #fff;
                 padding: 0 10px;
+                opacity: 1;
             }
-
+            
             input {
                 font-size: 1rem;
                 border: 1.5px solid #8b8a8b;
@@ -86,11 +98,6 @@ $green: rgba(14,174,87,1);
                     border: 1.5px solid $green;
                 }
                 
-                
-                &:not([value=""]):not(:focus):invalid, input:required:invalid:not(:placeholder-shown) {
-                    background-color: #fff;
-                    border: 1.5px solid $green;
-                }
             }
             .login-btn {
                 width: 100%;

@@ -9,11 +9,11 @@
     </div>
     <form action="#">
         <div class="field">
-            <input type="email" id="email" placeholder="E-mail">
+            <input type="email" id="email" placeholder="E-mail" (change)="onChange($event)">
             <label for="email">E-mail</label>
         </div>
         <div class="field">
-            <input type="password" id="password" placeholder="Senha">
+            <input type="password" id="password" placeholder="Senha" (change)="onChange($event)">
             <label for="password">Senha</label>
         </div>
         <button class="login-btn">
