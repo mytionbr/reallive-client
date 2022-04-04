@@ -8,6 +8,8 @@ import { AuthFormStyleService } from '../auth-form-style.service';
 })
 export class SigninComponent implements OnInit {
 
+  errors = "";
+
   constructor(private authFormStyleService: AuthFormStyleService) { }
 
   ngOnInit(): void {

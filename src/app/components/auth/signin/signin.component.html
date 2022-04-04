@@ -14,15 +14,23 @@
             <input type="email" id="email" placeholder="E-mail" (change)="onChange($event)">
             <label for="email">E-mail</label>
             <i class="fa-solid fa-at"></i>
+            <span></span>
         </div>
         <div class="field">
             <input type="password" id="password" placeholder="Senha" (change)="onChange($event)">
             <label for="password">Senha</label>
             <i class="fa-solid fa-key"></i>
+            <span></span>
         </div>
         <button class="action-btn">
             Login
         </button>
+        <div *ngIf="errors">
+            <div class="errors">
+                <p>Algo está errado</p>
+            </div>
+        </div>
+       
     </form>
     <div class="text-footer">
         Não possue uma conta? <a routerLink="/signup">Se cadastre aqui</a>
