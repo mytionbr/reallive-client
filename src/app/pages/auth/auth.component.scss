@@ -6,6 +6,14 @@ $white-color: #fff;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "banner auth";
+
+  @media (max-width: 768px){
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "auth""banner";
+
+  }
+
 }
 
 .banner {
@@ -29,7 +37,11 @@ $white-color: #fff;
     animation-name: change_color;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% ); 
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(14, 174, 87, 1) 0%,
+      rgba(12, 116, 117, 1) 90%
+    );
   }
 
   &::after {
@@ -43,7 +55,11 @@ $white-color: #fff;
     animation-name: change_color;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% ); 
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(14, 174, 87, 1) 0%,
+      rgba(12, 116, 117, 1) 90%
+    );
   }
 
   @keyframes change_color {
@@ -54,8 +70,6 @@ $white-color: #fff;
       transform: rotate(360deg);
     }
   }
-
- 
 
   h1 {
     font-size: 50px;

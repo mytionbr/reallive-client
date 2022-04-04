@@ -2,19 +2,23 @@
     <div class="wrapper">
     <div class="intro-text">
         <h1>Olá novamente</h1>
+
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis similique ex commodi magni atque
             cupiditate vitae hic dicta aspernatur, eligendi, debitis magnam? 
         </p>
     </div>
     <form action="#">
+
         <div class="field">
             <input type="email" id="email" placeholder="E-mail" (change)="onChange($event)">
             <label for="email">E-mail</label>
+            <i class="fa-solid fa-at"></i>
         </div>
         <div class="field">
             <input type="password" id="password" placeholder="Senha" (change)="onChange($event)">
             <label for="password">Senha</label>
+            <i class="fa-solid fa-key"></i>
         </div>
         <button class="login-btn">
             Login

@@ -1,4 +1,5 @@
 $green: rgba(14,174,87,1);
+$grey: #8b8a8b;
 
 .container{
     width: 100%;
@@ -45,60 +46,79 @@ $green: rgba(14,174,87,1);
                 margin-bottom: 1rem;
                 width: 100%;
                 position: relative;
-            }
 
-            label, input {
-                transition: all 0.2s;
-                touch-action: manipulation;
-            }
-
-            label {
-                position: absolute;
-                left: 18px;
-                top: 15px;
-                color: #8b8a8b;
-                opacity: 0;
-            }
-
-            input.active{
-                background-color: #fff;
-                border: 1.5px solid $green;
-            }
-
-            input:focus::placeholder{
-                opacity: 0;
-            }
-            
-            input:focus ~ label,
-            input.active ~ label{
-                color: $green;
-                transform:  scale(0.8);
-                left: 3px;
-                top: -12px;
-                background-color: #fff;
-                padding: 0 10px;
-                opacity: 1;
-            }
-            
-            input {
-                font-size: 1rem;
-                border: 1.5px solid #8b8a8b;
-                border-radius: 8px;
-                padding: 0.8rem 1rem;
-                background-color: #E7ECF4;
-                width: 100%;
-
-                &:focus{
-                    outline: 0;
-                    border: 1.5px solid $green;
-                    background-color: #fff;
+                label, input {
+                    transition: all 0.2s;
+                    touch-action: manipulation;
                 }
-
-                &:hover {
+    
+                label {
+                    position: absolute;
+                    left: 18px;
+                    top: 15px;
+                    color: $grey;
+                    opacity: 0;
+                }
+    
+                input.active{
+                    background-color: #fff;
                     border: 1.5px solid $green;
+                }
+    
+                input:focus::placeholder{
+                    opacity: 0;
                 }
                 
+                input:focus ~ label,
+                input.active ~ label{
+                    color: $green;
+                    transform:  scale(0.8);
+                    left: 3px;
+                    top: -12px;
+                    background-color: #fff;
+                    padding: 0 10px;
+                    opacity: 1;
+                }
+                
+                input {
+                    font-size: 1rem;
+                    border: 1.5px solid $grey;
+                    border-radius: 8px;
+                    padding: 0.8rem 1rem;
+                    background-color: #E7ECF4;
+                    width: 100%;
+                    position: relative;
+    
+                    &:focus{
+                        outline: 0;
+                        border: 1.5px solid $green;
+                        background-color: #fff;
+                    }
+    
+                    &:hover {
+                        border: 1.5px solid $green;
+                    }
+    
+                }
+
+                i {
+                    position: absolute;
+                    font-size: 20px;
+                    color: $grey;
+                    top: 15px;
+                    right:1rem;
+                    z-index: 100;
+                }
+
+                input:focus ~ i,
+                input.active ~ i {
+                    color: $green;
+                }
+
+
             }
+
+            
             .login-btn {
                 width: 100%;
                 background-color:$green;
