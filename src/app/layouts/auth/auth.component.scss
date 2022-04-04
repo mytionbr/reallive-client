@@ -9,9 +9,9 @@ $white-color: #fff;
 
   @media (max-width: 768px){
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: repeat(2,100%);
     grid-template-areas: "auth""banner";
-
+    grid-auto-flow: column;
   }
 
 }

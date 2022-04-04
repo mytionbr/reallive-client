@@ -1,1 +1,41 @@
-<p>signup works!</p>
+<div class="container">
+    <div class="wrapper">
+    <div class="intro-text">
+        <h1>Novo por aqui?</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis similique ex commodi magni atque
+            cupiditate vitae hic dicta aspernatur, eligendi, debitis magnam? 
+        </p>
+    </div>
+    <form action="#">
+
+        <div class="field">
+            <input type="text" id="nickname" placeholder="Apelido" (change)="onChange($event)">
+            <label for="nickname">Apelido</label>
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="field">
+            <input type="email" id="email" placeholder="E-mail" (change)="onChange($event)">
+            <label for="email">E-mail</label>
+            <i class="fa-solid fa-at"></i>
+        </div>
+        <div class="field">
+            <input type="password" id="password" placeholder="Senha" (change)="onChange($event)">
+            <label for="password">Senha</label>
+            <i class="fa-solid fa-key"></i>
+        </div>
+        <div class="field">
+            <input type="password" id="password-confirm" placeholder="Confirmar" (change)="onChange($event)">
+            <label for="password-confirm">Confirmar</label>
+            <i class="fa-solid fa-key"></i>
+        </div>
+        <button class="action-btn">
+            Login
+        </button>
+    </form>
+    <div class="text-footer">
+        Já possue conta? <a routerLink="/signin">Faça o login aqui</a>
+    </div>
+    </div>
+</div>

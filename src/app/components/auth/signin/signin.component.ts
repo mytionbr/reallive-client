@@ -13,7 +13,6 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   onChange(event: Event){
     this.authFormStyleService.handleInputChange(event);
   }
