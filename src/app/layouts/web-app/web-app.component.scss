@@ -1,0 +1,19 @@
+
+.container-root {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar-container channel-container";
+    overflow: hidden;
+
+    .sidebar-container {
+        grid-area: sidebar-container;        
+    }
+
+    .channel-container {
+        grid-area: channel-container;
+        background-color: black;
+    }
+}

@@ -1,0 +1,21 @@
+@import '../../../../styles/variables.scss';
+
+.item-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0.4rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+
+    i {
+        font-size: 1.3rem;
+        color: $grey-dark;
+    }
+}
