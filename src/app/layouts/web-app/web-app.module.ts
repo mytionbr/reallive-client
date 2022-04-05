@@ -7,6 +7,7 @@ import { HeaderComponent } from '../../components/web-app/header/header.componen
 import { SidebarHeaderComponent } from '../../components/web-app/sidebar-header/sidebar-header.component';
 import { ImgBoxComponent } from '../../components/web-app/img-box/img-box.component';
 import { ItemBtnComponent } from '../../components/web-app/item-btn/item-btn.component';
+import { SearchBoxComponent } from '../../components/web-app/search-box/search-box.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ItemBtnComponent } from '../../components/web-app/item-btn/item-btn.com
     HeaderComponent,
     SidebarHeaderComponent,
     ImgBoxComponent,
-    ItemBtnComponent
+    ItemBtnComponent,
+    SearchBoxComponent
     
   ],
   imports: [

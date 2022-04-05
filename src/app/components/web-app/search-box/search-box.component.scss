@@ -1,0 +1,26 @@
+@import '../../../../styles/variables.scss';
+
+.search-box{
+    display: flex;
+    align-items: center;
+    width: 390px;
+    padding: 5px 10px;
+    background-color: $grey-light;
+    border-radius: 8px;
+
+    input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    i {
+        font-size: 1.2rem;
+        color: $grey-dark;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+}

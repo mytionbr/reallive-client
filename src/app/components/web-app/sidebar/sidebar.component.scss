@@ -1,3 +1,4 @@
+@import '../../../../styles/variables.scss';
 
 .sidebar {
     width: 100%;
@@ -11,9 +12,13 @@
         grid-area: header;        
     }
 
-    .search-box {
+    .search-box-container {
         grid-area: search-box;
-        background-color: blue;
+        width: 100%;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .channels {
