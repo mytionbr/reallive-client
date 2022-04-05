@@ -1,4 +1,4 @@
-$white-color: #fff;
+@import '../../../styles/variables.scss';
 
 .container-grid {
   height: 100%;
@@ -19,7 +19,7 @@ $white-color: #fff;
 .banner {
   grid-area: banner;
   display: flex;
-  background-color: #6fb529;
+  background-color: $green;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@ $white-color: #fff;
     animation-iteration-count: infinite;
     background-image: radial-gradient(
       circle farthest-corner at 10% 20%,
-      rgba(14, 174, 87, 1) 0%,
+      $green 0%,
       rgba(12, 116, 117, 1) 90%
     );
   }
@@ -57,7 +57,7 @@ $white-color: #fff;
     animation-iteration-count: infinite;
     background-image: radial-gradient(
       circle farthest-corner at 10% 20%,
-      rgba(14, 174, 87, 1) 0%,
+      $green 0%,
       rgba(12, 116, 117, 1) 90%
     );
   }
@@ -73,7 +73,7 @@ $white-color: #fff;
 
   h1 {
     font-size: 50px;
-    color: $white-color;
+    color: $white;
     margin-bottom: 3rem;
     font-weight: 800;
   }

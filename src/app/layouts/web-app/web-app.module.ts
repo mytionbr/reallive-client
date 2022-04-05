@@ -8,6 +8,8 @@ import { SidebarHeaderComponent } from '../../components/web-app/sidebar-header/
 import { ImgBoxComponent } from '../../components/web-app/img-box/img-box.component';
 import { ItemBtnComponent } from '../../components/web-app/item-btn/item-btn.component';
 import { SearchBoxComponent } from '../../components/web-app/search-box/search-box.component';
+import { ChannelListComponent } from '../../components/web-app/channel-list/channel-list.component';
+import { ChannelItemComponent } from '../../components/web-app/channel-item/channel-item.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SearchBoxComponent } from '../../components/web-app/search-box/search-b
     SidebarHeaderComponent,
     ImgBoxComponent,
     ItemBtnComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    ChannelListComponent,
+    ChannelItemComponent
     
   ],
   imports: [

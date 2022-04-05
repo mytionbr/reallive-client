@@ -1,0 +1,18 @@
+<div class="channel-item">
+    <app-img-box src="{{channel?.img}}" alt="foto do canal"></app-img-box>
+    <div class="channel-info">
+        <h1>
+            {{channel?.title}}
+        </h1>
+        <p *ngIf="isGroup">{{channel?.lastMessages?.lastMessage?.user?.name}}: {{channel?.lastMessages?.lastMessage?.content}}</p>
+        <p *ngIf="!isGroup">{{channel?.lastMessages?.lastMessage?.content}}</p>
+    </div>
+    <div class="channel-data">
+        <p  class="updated-date" [class.active]="!channel?.lastMessages?.viewed">
+            {{channel?.lastMessages?.lastMessage?.updatedAt}}
+        </p>
+        <p  class="count" *ngIf="!channel?.lastMessages?.viewed">
+            {{channel?.lastMessages?.count}}
+        </p>
+    </div>
+</div>

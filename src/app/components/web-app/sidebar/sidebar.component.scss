@@ -14,16 +14,14 @@
 
     .search-box-container {
         grid-area: search-box;
-        width: 100%;
         background-color: $white;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .channels {
+    .channels-container {
         grid-area: channels;
-        background-color: green;
     }
 
     
