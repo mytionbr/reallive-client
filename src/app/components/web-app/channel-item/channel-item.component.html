@@ -11,8 +11,11 @@
         <p  class="updated-date" [class.active]="!channel?.lastMessages?.viewed">
             {{channel?.lastMessages?.lastMessage?.updatedAt}}
         </p>
-        <p  class="count" *ngIf="!channel?.lastMessages?.viewed">
-            {{channel?.lastMessages?.count}}
-        </p>
+        <div class="count"  *ngIf="!channel?.lastMessages?.viewed">
+            <p>
+                {{channel?.lastMessages?.count}}
+            </p>
+        </div>
+       
     </div>
 </div>

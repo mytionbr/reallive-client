@@ -10,6 +10,7 @@ import { ItemBtnComponent } from '../../components/web-app/item-btn/item-btn.com
 import { SearchBoxComponent } from '../../components/web-app/search-box/search-box.component';
 import { ChannelListComponent } from '../../components/web-app/channel-list/channel-list.component';
 import { ChannelItemComponent } from '../../components/web-app/channel-item/channel-item.component';
+import { DefaultPageComponent } from 'src/app/components/web-app/default-page/default-page.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ChannelItemComponent } from '../../components/web-app/channel-item/chan
     ItemBtnComponent,
     SearchBoxComponent,
     ChannelListComponent,
-    ChannelItemComponent
+    ChannelItemComponent,
+    DefaultPageComponent
     
   ],
   imports: [

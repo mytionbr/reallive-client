@@ -142,7 +142,7 @@ export const CHANNELS = [
         img: 'https://www.collinsdictionary.com/images/full/tree_267376982.jpg',
         lastMessages: {
             viewed: false,
-            count: 1,
+            count: 100,
             lastMessage: {
                 content: 'blblblblblblblblblblblbb',
                 user: {
