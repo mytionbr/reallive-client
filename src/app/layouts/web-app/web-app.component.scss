@@ -4,16 +4,17 @@
     height: 100%;
     display: grid;
     grid-template-columns: 400px 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
     grid-template-areas: "sidebar-container channel-container";
     overflow: hidden;
+    
 
     .sidebar-container {
-        grid-area: sidebar-container;        
+        grid-area: sidebar-container;
+        overflow: hidden;
     }
 
     .channel-container {
         grid-area: channel-container;
-        background-color: black;
     }
 }

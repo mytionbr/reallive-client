@@ -6,8 +6,9 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 70px 50px 1fr;
-    grid-template-areas: "header""search-box""channels";
-
+    grid-template-areas: "header""search-box""channels";   
+    border-right: solid 1px  $grey;
+    
     .header-container {
         grid-area: header;        
     }
@@ -22,6 +23,7 @@
 
     .channels-container {
         grid-area: channels;
+        overflow: hidden;
     }
 
     
