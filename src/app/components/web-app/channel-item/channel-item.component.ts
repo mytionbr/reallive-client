@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscriber } from 'rxjs';
+import { SelectChatService } from 'src/app/services/select-chat.service';
 import { Channel } from '../../../models/channel';
 
 @Component({
@@ -10,15 +12,19 @@ import { Channel } from '../../../models/channel';
 export class ChannelItemComponent implements OnInit {
   @Input() channel: Channel | undefined = undefined;
 
+
   isGroup = false
 
-
-  constructor() { 
-   
+  constructor(private selectChatService: SelectChatService) {  
   }
 
   ngOnInit(): void {
     this.isGroup = this.channel?.type == "group"
+  }
+
+  onClick() {
+    const id = this.channel?.id;
+    if(id) this.selectChatService.sendUpdate(id);
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ChatService } from 'src/app/services/chat.service';
+import { SelectChatService } from 'src/app/services/select-chat.service';
 
 @Component({
   selector: 'app-web-app',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WebAppComponent implements OnInit {
 
-  constructor() { }
+  currentChatId: String | undefined = undefined;
+  selectedChat: Subscription; 
+  
 
-  ngOnInit(): void {
+  constructor(private selectChat: SelectChatService, private chatService: ChatService) { 
+    this.selectedChat = this.selectChat.getUpdate().subscribe(
+      result => {
+        this.currentChatId = result;
+      }
+    )
   }
 
+  ngOnInit(): void {
+    
+  }
+
+  ngOnDestroy(): void {
+    this.selectedChat.unsubscribe();
+  }
 }

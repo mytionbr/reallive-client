@@ -1,0 +1,11 @@
+<div class="chat">
+    <div class="chat-header">
+        <app-header>
+            <app-chat-header *ngIf="chat" [img]="chat.img" [title]="chat.title"></app-chat-header>
+        </app-header>
+    </div>
+    <div class="chat-messages">
+        <app-chat-messages></app-chat-messages>
+    </div>
+    
+</div>

@@ -11,6 +11,10 @@ import { SearchBoxComponent } from '../../components/web-app/search-box/search-b
 import { ChannelListComponent } from '../../components/web-app/channel-list/channel-list.component';
 import { ChannelItemComponent } from '../../components/web-app/channel-item/channel-item.component';
 import { DefaultPageComponent } from 'src/app/components/web-app/default-page/default-page.component';
+import { ChatComponent } from '../../components/web-app/chat/chat.component';
+import { ChatHeaderComponent } from '../../components/web-app/chat-header/chat-header.component';
+import { ChatInputComponent } from '../../components/web-app/chat-input/chat-input.component';
+import { ChatMessagesComponent } from '../../components/web-app/chat-messages/chat-messages.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { DefaultPageComponent } from 'src/app/components/web-app/default-page/de
     SearchBoxComponent,
     ChannelListComponent,
     ChannelItemComponent,
-    DefaultPageComponent
+    DefaultPageComponent,
+    ChatComponent,
+    ChatHeaderComponent,
+    ChatInputComponent,
+    ChatMessagesComponent
     
   ],
   imports: [

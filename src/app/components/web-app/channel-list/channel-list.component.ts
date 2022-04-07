@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../../../services/chat.service';
 import { CHANNELS } from '../../../mocks/channels';
 import { Channel } from '../../../models/channel';
 
@@ -9,11 +10,13 @@ import { Channel } from '../../../models/channel';
 })
 export class ChannelListComponent implements OnInit {
 
-  channels: Channel[] =  CHANNELS;
+  channels: Channel[] =  [];
 
-  constructor() { }
+  constructor(private chatService: ChatService) { }
 
   ngOnInit(): void {
+    this.channels = this.chatService.getChannels();
   }
+
 
 }

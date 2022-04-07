@@ -5,9 +5,9 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 50px 1fr;
+    grid-template-rows: $header-height 50px 1fr;
     grid-template-areas: "header""search-box""channels";   
-    border-right: solid 1px  $grey;
+    border-right: solid 1px  $grey-middle;
     
     .header-container {
         grid-area: header;        

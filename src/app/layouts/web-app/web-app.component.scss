@@ -16,5 +16,6 @@
 
     .channel-container {
         grid-area: channel-container;
+        overflow: hidden;
     }
 }

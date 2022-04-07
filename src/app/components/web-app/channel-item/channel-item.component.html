@@ -1,4 +1,4 @@
-<div class="channel-item">
+<div class="channel-item" (click)="onClick()">
     <app-img-box src="{{channel?.img}}" alt="foto do canal"></app-img-box>
     <div class="channel-info">
         <h1>
@@ -16,6 +16,5 @@
                 {{channel?.lastMessages?.count}}
             </p>
         </div>
-       
     </div>
 </div>

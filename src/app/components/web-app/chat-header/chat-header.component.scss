@@ -1,0 +1,21 @@
+.chat-header{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title{
+        width: 90%;
+        padding-left: 10px;
+
+        h1 {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+    }
+
+    .btns{
+        display: flex;
+    }
+}

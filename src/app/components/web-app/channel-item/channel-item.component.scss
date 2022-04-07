@@ -14,7 +14,8 @@
     &:hover{
         filter: brightness(90%);
     }
-
+    
+   
 
     .channel-info{
         display: flex;
@@ -23,10 +24,19 @@
         justify-content: space-between;
         width: 80%;
         margin-left: 10px;
+        overflow: hidden;
+        
+        h1, p {
+            width: calc(100% - 10px);
+            overflow: hidden;
+            white-space: nowrap; 
+            text-overflow: ellipsis;
+        }
         
         h1 {
             font-size: 1.1rem;
             font-weight: 400;
+
         }
 
         p{
@@ -60,5 +70,5 @@
             text-align: center;
             font-size: 0.7rem;
         }
-    }
+    }   
 }
