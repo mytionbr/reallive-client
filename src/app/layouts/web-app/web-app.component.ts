@@ -10,20 +10,19 @@ import { SelectChatService } from 'src/app/services/select-chat.service';
 })
 export class WebAppComponent implements OnInit {
 
-  currentChatId: String | undefined = undefined;
-  selectedChat: Subscription; 
-  
+  currentChatId: string | undefined = undefined;
+  selectedChat: Subscription = new Subscription(); 
 
   constructor(private selectChat: SelectChatService, private chatService: ChatService) { 
+  }
+
+  ngOnInit(): void {
     this.selectedChat = this.selectChat.getUpdate().subscribe(
       result => {
         this.currentChatId = result;
       }
     )
-  }
-
-  ngOnInit(): void {
-    
+   
   }
 
   ngOnDestroy(): void {

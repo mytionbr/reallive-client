@@ -8,7 +8,7 @@ export class SelectChatService {
 
   private selectedChat = new Subject<any>();
 
-  sendUpdate(value: String){
+  sendUpdate(value: string){
     this.selectedChat.next(value);
   }
 
@@ -16,5 +16,6 @@ export class SelectChatService {
     return this.selectedChat.asObservable();
   }
 
-  constructor() { }
+  constructor() { 
+  }
 }

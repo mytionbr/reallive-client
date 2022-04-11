@@ -4,6 +4,6 @@
     </div>
     <div class="channel-container">
             <app-default-page  *ngIf="!currentChatId"></app-default-page>
-            <app-chat *ngIf="currentChatId"></app-chat>
+            <app-chat *ngIf="currentChatId" [currentChatId]="currentChatId" ></app-chat>
     </div>
 </div>
