@@ -6,7 +6,11 @@ $grey-middle:#8696A0;
 $white: #fff;
 $green: #6fb529;
 $paper: #f7f8fa;
-$chat-color: #E4E9BE;
+$chat-color: $paper;
+$message-my: $green;
+$message-outher: $grey-light;
+$input-box: $white;
+$input-field: $paper;
 
 //sizes
 $header-height: 70px;

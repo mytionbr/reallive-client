@@ -1,0 +1,19 @@
+@import "../../../../styles/variables.scss";
+
+.chat-message {
+  max-width: 100%;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  position: relative;
+  text-align: left;
+
+  &.my {
+    background-color: $message-my;
+    color: $white;
+  }
+
+  &.outher {
+    background-color: $message-outher;
+  }
+}
