@@ -158,7 +158,7 @@ export const MESSAGES: Message[] = [
     },
     {
         id: '12',
-        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdgssssssssssssssssssssssssssssssssssssssssssssddddddddddddddddddddddddddddddddddddddddddddd",
         user: {
             id: '10'
         }

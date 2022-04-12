@@ -2,12 +2,15 @@
 
 .chat-message {
   width: fit-content;
+  max-width: 60%;
   padding: 5px 10px;
   font-size: 1rem;
   border-radius: 5px;
   position: relative;
   text-align: left;
-
+  white-space: initial;
+  word-wrap: break-word;
+  
   &.my {
     background-color: $message-my;
     color: $white;
