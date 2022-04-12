@@ -1,7 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .chat-message {
-  max-width: 100%;
+  width: fit-content;
   padding: 5px 10px;
   font-size: 1rem;
   border-radius: 5px;

@@ -113,4 +113,54 @@ export const MESSAGES: Message[] = [
             id: '10'
         }
     },
+    {
+        id: '12',
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        user: {
+            id: '10'
+        }
+    },
+    {
+        id: '12',
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        user: {
+            id: '10'
+        }
+    },
+
+    {
+        id: '12',
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        user: {
+            id: '10'
+        }
+    },
+    {
+        id: '12',
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        user: {
+            id: '10'
+        }
+    },
+    {
+        id: '12',
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        user: {
+            id: '10'
+        }
+    },
+    {
+        id: '12',
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        user: {
+            id: '10'
+        }
+    },
+    {
+        id: '12',
+        text: "fdgfdgjfdkgjfdglkdf fg dfg fd gfdg",
+        user: {
+            id: '10'
+        }
+    },
 ] 

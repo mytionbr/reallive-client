@@ -15,6 +15,7 @@ export class ChatComponent implements OnInit, OnChanges {
   chat: Chat | undefined; 
   
   constructor(private chatService: ChatService) {}
+  
   ngOnChanges(changes: SimpleChanges): void {
     const updatedChatId = changes['currentChatId'].currentValue
     this.updateChat(updatedChatId);

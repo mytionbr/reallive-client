@@ -1,4 +1,5 @@
 @import '../../../../styles/variables.scss';
+@import '../../../../styles/scroll-bar.scss';
 
 .channel-list{
     height: 100%;
@@ -6,16 +7,5 @@
     background-color: $white;
     overflow: auto;
 
-    &::-webkit-scrollbar{
-        width: 10px;
-    }
-
-    &::-webkit-scrollbar-track{
-        background-color: $white;
-    }
-
-    &::-webkit-scrollbar-thumb{
-        background-color: $grey;
-        border-radius: 10px;        
-    }
+    @extend .custom-scroll-bar;
 }

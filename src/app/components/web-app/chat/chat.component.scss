@@ -7,18 +7,20 @@
     grid-template-columns: 1fr;
     grid-template-rows: $header-height 1fr 70px;
     grid-template-areas: "header""messages""input";
+    overflow: hidden;
+    
 
-    .chat-header {
+    .chat-header-container {
         grid-area: header;
     }
 
-    .chat-messages{
+    .chat-messages-container{
         grid-area: messages;
         overflow: hidden;
-        overflow-y: auto;
+        
     }
 
-    .chat-input{
+    .chat-input-container{
         grid-area: input;
     }
 
