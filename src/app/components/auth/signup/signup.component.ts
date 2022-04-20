@@ -66,6 +66,11 @@ export class SignupComponent implements OnInit {
   }
 
   successHandler(result: MutationResult) {
+   const success = result.data.register;
+   if(success){
+     alert('cadastro realizado com sucesso. Verifique o seu e-mail para validá-lo')
+    this.registerForm.reset()
+  }
    console.log(result)
   }
 
