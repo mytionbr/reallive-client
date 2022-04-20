@@ -1,0 +1,8 @@
+<div [ngClass]="checkError()" class="field">
+    <input [type]="type" [id]="id" [placeholder]="placeholder" (change)="onChange($event)" [formControlName]="controlName">
+    <label [for]="id">{{ label }}</label>
+    <i [class]="icon"></i>
+    <div class="error">
+        <span>{{ errorMessage }}</span>
+    </div>
+</div>

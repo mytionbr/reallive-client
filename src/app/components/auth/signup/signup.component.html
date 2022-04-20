@@ -8,35 +8,20 @@
             cupiditate vitae hic dicta aspernatur, eligendi, debitis magnam? 
         </p>
     </div>
-    <form action="#">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <app-form-input [callbackVerifyError]="checkError('nickname')" id="nickname" label="Apelido" placeholder="Apelido" errorMessage="O apelido é obrigatório" controlName="nickname" type="text" icon="fa-solid fa-user" ></app-form-input>
+        <app-form-input [callbackVerifyError]="checkError('email')" id="email" label="E-mail" placeholder="E-mail" errorMessage="O e-mail é obrigatório" controlName="email" type="email" icon="fa-solid fa-at" ></app-form-input>
+        <app-form-input [callbackVerifyError]="checkError('password')" id="password" label="Senha" placeholder="Senha" errorMessage="A senha é obrigatória" controlName="password" type="password" icon="fa-solid fa-key" ></app-form-input>
+        <app-form-input [callbackVerifyError]="checkError('confirmPassword')" id="confirmPassword" label="Confirmar" placeholder="Confirmar" errorMessage="O confirmar senha é obrigatório" controlName="confirmPassword" type="password" icon="fa-solid fa-key" ></app-form-input>
 
-        <div class="field">
-            <input type="text" id="nickname" placeholder="Apelido" (change)="onChange($event)">
-            <label for="nickname">Apelido</label>
-            <i class="fa-solid fa-user"></i>
-            <span></span>
-        </div>
-        <div class="field">
-            <input type="email" id="email" placeholder="E-mail" (change)="onChange($event)">
-            <label for="email">E-mail</label>
-            <i class="fa-solid fa-at"></i>
-            <span></span>
-        </div>
-        <div class="field">
-            <input type="password" id="password" placeholder="Senha" (change)="onChange($event)">
-            <label for="password">Senha</label>
-            <i class="fa-solid fa-key"></i>
-            <span></span>
-        </div>
-        <div class="field">
-            <input type="password" id="password-confirm" placeholder="Confirmar" (change)="onChange($event)">
-            <label for="password-confirm">Confirmar</label>
-            <i class="fa-solid fa-key"></i>
-            <span></span>
-        </div>
         <button class="action-btn">
-            Login
+            Cadastrar
         </button>
+        <div *ngIf="errors">
+            <div class="errors">
+                <p>Algo está errado</p>
+            </div>
+        </div>
     </form>
     <div class="text-footer">
         Já possue conta? <a routerLink="/signin">Faça o login aqui</a>

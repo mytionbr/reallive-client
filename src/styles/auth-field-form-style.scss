@@ -1,0 +1,120 @@
+@import './variables.scss';
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+    position: relative;
+
+    label,
+    input {
+      transition: all 0.2s;
+      touch-action: manipulation;
+    }
+
+    label {
+      position: absolute;
+      left: 18px;
+      top: 15px;
+      color: $input-grey;
+      opacity: 0;
+      cursor: text;
+    }
+
+    input.active {
+      background-color: #fff;
+      border: 1.5px solid $input-green;
+    }
+
+    input:focus::placeholder {
+      opacity: 0;
+    }
+
+    input:focus ~ label,
+    input.active ~ label {
+      color: $input-green;
+      transform: scale(0.8);
+      left: 3px;
+      top: -12px;
+      background-color: #fff;
+      padding: 0 10px;
+      opacity: 1;
+    }
+
+    input {
+      font-size: 1rem;
+      border: 1.5px solid $input-grey;
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      background-color: #e7ecf4;
+      width: 100%;
+      position: relative;
+
+      &:focus {
+        outline: 0;
+        border: 1.5px solid $input-green;
+        background-color: #fff;
+      }
+
+      &:hover {
+        border: 1.5px solid $input-green;
+      }
+    }
+
+    i {
+      position: absolute;
+      font-size: 20px;
+      color: $input-grey;
+      top: 15px;
+      right: 1rem;
+      z-index: 100;
+    }
+
+    input:focus ~ i,
+    input.active ~ i {
+      color: $input-green;
+    }
+
+    .error {
+        height: 0.9rem;
+        
+        & > span {
+          display: none;
+          color: $input-red;
+          font-size: 0.8rem;
+          margin-left: 17px;
+        }
+    }
+
+    &.invalid {
+      & > .error span {
+        display: block;
+      }
+      & > input {
+        border-color: $input-red;
+
+        & ~ label {
+          color: $input-red;
+        }
+
+        & ~ i {
+          color: $input-red;
+        }
+      }
+    }
+  }
+
+  .action-btn {
+    width: 100%;
+    background-color: $input-green;
+    padding: 0.7rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+

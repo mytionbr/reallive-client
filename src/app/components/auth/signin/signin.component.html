@@ -1,39 +1,27 @@
 <div class="container">
     <div class="wrapper">
-    <div class="intro-text">
-        <h1>Olá novamente</h1>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis similique ex commodi magni atque
-            cupiditate vitae hic dicta aspernatur, eligendi, debitis magnam? 
-        </p>
-    </div>
-    <form action="#">
-
-        <div class="field">
-            <input type="email" id="email" placeholder="E-mail" (change)="onChange($event)">
-            <label for="email">E-mail</label>
-            <i class="fa-solid fa-at"></i>
-            <span></span>
+        <div class="intro-text">
+            <h1>Olá novamente</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis similique ex commodi magni atque
+                cupiditate vitae hic dicta aspernatur, eligendi, debitis magnam?
+            </p>
         </div>
-        <div class="field">
-            <input type="password" id="password" placeholder="Senha" (change)="onChange($event)">
-            <label for="password">Senha</label>
-            <i class="fa-solid fa-key"></i>
-            <span></span>
-        </div>
-        <button class="action-btn">
-            Login
-        </button>
-        <div *ngIf="errors">
-            <div class="errors">
-                <p>Algo está errado</p>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <app-form-input [callbackVerifyError]="checkError('email')" id="email" label="E-email" placeholder="E-mail" errorMessage="O e-mail é obrigatório" controlName="email" type="email" icon="fa-solid fa-at" ></app-form-input>
+            <app-form-input [callbackVerifyError]="checkError('password')" id="password" label="Senha" placeholder="Senha" errorMessage="A senha é obrigatória" controlName="password" type="password" icon="fa-solid fa-key" ></app-form-input>
+            <button class="action-btn">
+                Login
+            </button>
+            <div *ngIf="errors">
+                <div class="errors">
+                    <p>Algo está errado</p>
+                </div>
             </div>
+
+        </form>
+        <div class="text-footer">
+            Não possue uma conta? <a routerLink="/signup">Se cadastre aqui</a>
         </div>
-       
-    </form>
-    <div class="text-footer">
-        Não possue uma conta? <a routerLink="/signup">Se cadastre aqui</a>
-    </div>
     </div>
 </div>
