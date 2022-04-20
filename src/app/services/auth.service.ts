@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
-import { LOGIN, REGISTER } from '../graphql/mutations/auth';
-import { LoginUserInput, RegisterUserInput } from '../models/user';
+import { CONFIRM_EMAIL, LOGIN, REGISTER } from '../graphql/mutations/auth';
+import { VerifyEmailInput, LoginUserInput, RegisterUserInput } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -41,6 +41,15 @@ export class AuthService {
     const result = this.apollo.mutate({
       mutation: LOGIN,
       variables: { email, password }
+    })
+    return result;
+  }
+
+  verifyEmail(verifyEmailInput: VerifyEmailInput){
+    const { code, userId } = verifyEmailInput;
+    const result = this.apollo.mutate({
+      mutation: CONFIRM_EMAIL,
+      variables: { code, userId }
     })
     return result;
   }

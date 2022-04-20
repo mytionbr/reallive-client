@@ -6,6 +6,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormInputComponent } from '../../components/auth/form-input/form-input.component';
+import { ValidateEmailComponent } from '../../components/auth/validate-email/validate-email.component';
 
 
 
@@ -14,7 +15,8 @@ import { FormInputComponent } from '../../components/auth/form-input/form-input.
     SigninComponent,
     SignupComponent,
     AuthComponent,
-    FormInputComponent
+    FormInputComponent,
+    ValidateEmailComponent
   ],
   imports: [
     CommonModule,

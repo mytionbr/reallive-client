@@ -8,3 +8,8 @@ export interface LoginUserInput {
   email: string;
   password: string;
 }
+
+export interface VerifyEmailInput {
+  code: string;
+  userId: string;
+}
