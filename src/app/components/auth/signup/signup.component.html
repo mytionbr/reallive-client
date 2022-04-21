@@ -9,10 +9,10 @@
         </p>
     </div>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <app-form-input [callbackVerifyError]="checkError('nickname')" id="nickname" label="Apelido" placeholder="Apelido" errorMessage="O apelido é obrigatório" controlName="nickname" type="text" icon="fa-solid fa-user" ></app-form-input>
-        <app-form-input [callbackVerifyError]="checkError('email')" id="email" label="E-mail" placeholder="E-mail" errorMessage="O e-mail é obrigatório" controlName="email" type="email" icon="fa-solid fa-at" ></app-form-input>
-        <app-form-input [callbackVerifyError]="checkError('password')" id="password" label="Senha" placeholder="Senha" errorMessage="A senha é obrigatória" controlName="password" type="password" icon="fa-solid fa-key" ></app-form-input>
-        <app-form-input [callbackVerifyError]="checkError('confirmPassword')" id="confirmPassword" label="Confirmar" placeholder="Confirmar" errorMessage="O confirmar senha é obrigatório" controlName="confirmPassword" type="password" icon="fa-solid fa-key" ></app-form-input>
+        <app-form-input [checkErros]="checkErrorNickname()" id="nickname" label="Apelido" placeholder="Apelido" errorMessage="O apelido é obrigatório" controlName="nickname" type="text" icon="fa-solid fa-user" ></app-form-input>
+        <app-form-input [checkErros]="checkErrorEmail()" id="email" label="E-mail" placeholder="E-mail" errorMessage="O e-mail é obrigatório" controlName="email" type="email" icon="fa-solid fa-at" ></app-form-input>
+        <app-form-input [checkErros]="checkErrorPassword()" id="password" label="Senha" placeholder="Senha" errorMessage="A senha é obrigatória" controlName="password" type="password" icon="fa-solid fa-key" ></app-form-input>
+        <app-form-input [checkErros]="checkErrorConfirmPassword()" id="confirmPassword" label="Confirmar" placeholder="Confirmar" errorMessage="O confirmar senha é obrigatório" controlName="confirmPassword" type="password" icon="fa-solid fa-key" ></app-form-input>
 
         <button class="action-btn">
             Cadastrar

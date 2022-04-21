@@ -3,6 +3,8 @@
     <label [for]="id">{{ label }}</label>
     <i [class]="icon"></i>
     <div class="error">
-        <span>{{ errorMessage }}</span>
+        <div class="wrapper">
+            <span>{{ showError() }}</span>
+        </div>
     </div>
 </div>

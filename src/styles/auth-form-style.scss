@@ -68,5 +68,18 @@
           background-color: darken($color: $input-green, $amount: 10%);
         }
       }
+
+      .spinner{
+        width: 100%;
+        padding: 0.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > i {
+          font-size: 1rem;
+          color: $green;
+        }
+      }
     }
   }

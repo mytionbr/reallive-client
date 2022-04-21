@@ -1,5 +1,7 @@
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, Input, OnInit } from '@angular/core';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
+import { IErrorFormField } from 'src/app/common/IError';
 import { AuthFormStyleService } from '../auth-form-style.service';
 
 @Component({
@@ -20,8 +22,7 @@ export class FormInputComponent implements OnInit {
   @Input() placeholder!: string;
   @Input() controlName!: string;
   @Input() label!: string;
-  @Input() errorMessage!: string;
-  @Input() callbackVerifyError: ()=> boolean = ()=> false;
+  @Input() checkErros: IErrorFormField[] = []
   @Input() icon!: string;
 
   constructor(
@@ -37,6 +38,23 @@ export class FormInputComponent implements OnInit {
   }
 
   checkError(){
-    return this.callbackVerifyError() ? 'invalid' : '';
+    return !!this.errorHandler(this.checkErros) ? 'invalid' : '';
+  }
+
+  showError(){
+    const error = this.errorHandler(this.checkErros);
+    if(error) return error 
+    
+    return
+  }
+
+  errorHandler(errors: IErrorFormField[]){
+    console.log(errors)
+    for(let error in errors){
+      if(errors[error].isValid){
+        return errors[error].message
+      }
+    }
+    return false;
   }
 }

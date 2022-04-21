@@ -6,6 +6,7 @@ import { LoginUserInput } from '../../../models/user';
 import { TokenService } from 'src/app/services/token.service';
 import { MutationResult } from 'apollo-angular';
 import { Router } from '@angular/router';
+import { IErrorFormField } from 'src/app/common/IError';
 
 @Component({
   selector: 'app-signin',
@@ -16,6 +17,7 @@ export class SigninComponent implements OnInit {
   errors = '';
   loginForm: FormGroup;
   submitted: boolean = false;
+  loading: boolean = false;
 
   constructor(
     private authFormStyleService: AuthFormStyleService,
@@ -54,6 +56,7 @@ export class SigninComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.loading = true;
 
     if (this.loginForm.valid) {
       const userInput: LoginUserInput = {
@@ -71,14 +74,17 @@ export class SigninComponent implements OnInit {
   }
 
   errorHanlder(err: any) {
+    this.clearForm();
+    this.errors = "Não foi possível realizar o login"
     console.log(err);
   }
 
   successHandler(result: MutationResult) {
     const token = result.data.login.token;
-    console.log(token);
     if(token){
       this.tokenService.storeToken(token);
+      this.clearForm();
+      this.errors = ""
       this.router.navigate(['/app'])
     }
   }
@@ -87,7 +93,36 @@ export class SigninComponent implements OnInit {
     this.authFormStyleService.handleInputChange(event);
   }
 
-  checkError(fieldName: string): ()=> boolean {
-    return ()=> this.verifyValidRequired(fieldName);
+  checkErrorPassword(): IErrorFormField[] {
+    const errors: IErrorFormField[] = [
+      {
+        isValid: this.verifyValidRequired('password'),
+        message: 'A senha é obrigatória'
+      }
+    ]
+
+    return errors;
+  }
+
+  checkErrorEmail(): IErrorFormField[] {
+    const errors: IErrorFormField[] = [
+      {
+        isValid: this.verifyValidRequired('email'),
+        message: 'O e-mail é obrigatório'
+      },
+      {
+        isValid: this.verifyValidEmail(),
+        message: 'E-mail inválido'
+      },
+    ]
+
+    return errors;
+  }
+
+
+  clearForm(){
+    this.loading = false;
+    this.submitted = false;
+    this.loginForm.reset()
   }
 }

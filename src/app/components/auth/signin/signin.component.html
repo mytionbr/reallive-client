@@ -8,14 +8,19 @@
             </p>
         </div>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <app-form-input [callbackVerifyError]="checkError('email')" id="email" label="E-email" placeholder="E-mail" errorMessage="O e-mail é obrigatório" controlName="email" type="email" icon="fa-solid fa-at" ></app-form-input>
-            <app-form-input [callbackVerifyError]="checkError('password')" id="password" label="Senha" placeholder="Senha" errorMessage="A senha é obrigatória" controlName="password" type="password" icon="fa-solid fa-key" ></app-form-input>
+            <app-form-input [checkErros]="checkErrorEmail()"  id="email" label="E-email" placeholder="E-mail" errorMessage="O e-mail é obrigatório" controlName="email" type="email" icon="fa-solid fa-at" ></app-form-input>
+            <app-form-input [checkErros]="checkErrorPassword()" id="password" label="Senha" placeholder="Senha" errorMessage="A senha é obrigatória" controlName="password" type="password" icon="fa-solid fa-key" ></app-form-input>
             <button class="action-btn">
                 Login
             </button>
             <div *ngIf="errors">
                 <div class="errors">
-                    <p>Algo está errado</p>
+                    <p>{{errors}}</p>
+                </div>
+            </div>
+            <div *ngIf="loading">
+                <div class="spinner">
+                    <i class="fa-solid fa-circle-notch"></i>
                 </div>
             </div>
 

@@ -77,18 +77,22 @@
     }
 
     .error {
-        height: 0.9rem;
+        min-height: 1.1rem;
         
-        & > span {
-          display: none;
-          color: $input-red;
-          font-size: 0.8rem;
-          margin-left: 17px;
-        }
+        & > .wrapper {
+          min-height: 0.9rem;
+          span {
+            display: none;
+            color: $input-red;
+            font-size: 0.8rem;
+            margin-left: 17px;
+            content: ' ';
+          }
+        } 
     }
 
     &.invalid {
-      & > .error span {
+      & > .error .wrapper span {
         display: block;
       }
       & > input {
@@ -104,17 +108,3 @@
       }
     }
   }
-
-  .action-btn {
-    width: 100%;
-    background-color: $input-green;
-    padding: 0.7rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
-  }
-

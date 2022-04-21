@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { CONFIRM_EMAIL, LOGIN, REGISTER } from '../graphql/mutations/auth';
 import { VerifyEmailInput, LoginUserInput, RegisterUserInput } from '../models/user';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private tokenService: TokenService) {}
 
   getAll() {
     this.apollo
@@ -52,6 +53,10 @@ export class AuthService {
       variables: { code, userId }
     })
     return result;
+  }
+
+  isAuthenticated(): boolean{
+    return !!this.tokenService.getToken();
   }
   
 }
