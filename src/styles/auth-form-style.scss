@@ -51,5 +51,22 @@
       .text-footer {
         margin-top: 1rem;
       }
+
+      .action-btn {
+        width: 100%;
+        background-color: $input-green;
+        padding: 0.7rem;
+        border: 0;
+        outline: none;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+      
+        &:hover {
+          background-color: darken($color: $input-green, $amount: 10%);
+        }
+      }
     }
   }
