@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TokenService {
 
-  tokenStorage = 'reallive-user-token'
+  readonly tokenStorage = 'reallive-user-token'
 
   constructor() { }
 

@@ -29,9 +29,7 @@ export class FormInputComponent implements OnInit {
     private authFormStyleService: AuthFormStyleService,
   ) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   onChange(event: Event) {
     this.authFormStyleService.handleInputChange(event);
@@ -49,7 +47,6 @@ export class FormInputComponent implements OnInit {
   }
 
   errorHandler(errors: IErrorFormField[]){
-    console.log(errors)
     for(let error in errors){
       if(errors[error].isValid){
         return errors[error].message

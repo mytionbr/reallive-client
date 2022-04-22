@@ -32,7 +32,9 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.navigateToAppIfAlreadyAuth()
+  }
 
   get loginFormControl() {
     return this.loginForm.controls;
@@ -57,6 +59,7 @@ export class SigninComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.loading = true;
+    this.errors = ''
 
     if (this.loginForm.valid) {
       const userInput: LoginUserInput = {
@@ -75,17 +78,17 @@ export class SigninComponent implements OnInit {
 
   errorHanlder(err: any) {
     this.clearForm();
-    this.errors = "Não foi possível realizar o login"
-    console.log(err);
+    this.errors = err.message
   }
 
   successHandler(result: MutationResult) {
     const token = result.data.login.token;
+    console.log(token)
     if(token){
       this.tokenService.storeToken(token);
       this.clearForm();
       this.errors = ""
-      this.router.navigate(['/app'])
+      this.router.navigate(['app'])
     }
   }
 

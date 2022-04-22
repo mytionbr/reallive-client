@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 import { CONFIRM_EMAIL, LOGIN, REGISTER } from '../graphql/mutations/auth';
 import { VerifyEmailInput, LoginUserInput, RegisterUserInput } from '../models/user';
@@ -8,7 +9,7 @@ import { TokenService } from './token.service';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private apollo: Apollo, private tokenService: TokenService) {}
+  constructor(private apollo: Apollo, private tokenService: TokenService, private router: Router) {}
 
   getAll() {
     this.apollo
@@ -57,6 +58,12 @@ export class AuthService {
 
   isAuthenticated(): boolean{
     return !!this.tokenService.getToken();
+  }
+
+  navigateToAppIfAlreadyAuth(): void {
+    const isAuth = this.isAuthenticated();
+
+    if(isAuth)  this.router.navigate(['/app']);
   }
   
 }
