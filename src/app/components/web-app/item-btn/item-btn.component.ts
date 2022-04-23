@@ -7,11 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemBtnComponent implements OnInit {
 
-  @Input() icon = ""
+  @Input() icon!: string;
+  @Input() ariaLabel: string  = "";
+  @Input() callbackFn?: () => void;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    if(this.callbackFn) this.callbackFn()
   }
 
 }

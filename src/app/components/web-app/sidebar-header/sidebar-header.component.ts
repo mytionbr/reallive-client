@@ -12,4 +12,8 @@ export class SidebarHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  alertClick(): void {
+    alert('hey man')
+  }
+
 }

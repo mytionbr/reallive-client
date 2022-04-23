@@ -4,7 +4,7 @@
         alt="user img"></app-img-box>
     </div>
     <div class="menu">
-        <app-item-btn icon="fa-solid fa-comment"></app-item-btn>
-        <app-item-btn icon="fa-solid fa-ellipsis-vertical"></app-item-btn>
+        <app-item-btn [callbackFn]="alertClick" icon="fa-solid fa-comment" title="Nova conversa" ariaLabel="Comece uma conversa"></app-item-btn>
+        <app-item-btn icon="fa-solid fa-ellipsis-vertical" title="Mais opções" ariaLabel="Mais opções"></app-item-btn>
     </div>
 </div>
