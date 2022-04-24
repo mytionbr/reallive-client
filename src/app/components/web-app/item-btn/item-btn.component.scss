@@ -17,6 +17,15 @@
 
     i {
         font-size: 1.3rem;
-        color: $grey-dark;
+
+        
+        &.dark{
+            color: $grey-dark;
+        }
+
+        &.white {
+            color: $white;
+        }
+
     }
 }

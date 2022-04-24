@@ -29,9 +29,7 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.authService.navigateToAppIfAlreadyAuth()
-  }
+  ngOnInit(): void { }
 
   get registerFormControl() {
     return this.registerForm.controls;

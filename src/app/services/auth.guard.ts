@@ -25,11 +25,13 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree> {
     return of(this.authService.isAuthenticated()).pipe(
       map((response: boolean) => {
+        if(response && (state.url === '/signin' || state.url === '/signup')){
+          return this.router.parseUrl('/app');
+        }
         if (response) {
           return true;
         } 
-        this.router.navigate(['/signin']);
-        return false;
+        return this.router.parseUrl('/signin');
       })
     );
   }

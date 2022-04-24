@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-item-btn',
@@ -9,7 +9,8 @@ export class ItemBtnComponent implements OnInit {
 
   @Input() icon!: string;
   @Input() ariaLabel: string  = "";
-  @Input() callbackFn?: () => void;
+  @Input() iconColor: "white" | "dark" =  "dark"
+  @Output() clickEvent = new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -17,7 +18,7 @@ export class ItemBtnComponent implements OnInit {
   }
 
   onClick(){
-    if(this.callbackFn) this.callbackFn()
+    this.clickEvent.emit(true);
   }
 
 }

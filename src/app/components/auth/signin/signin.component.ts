@@ -33,7 +33,6 @@ export class SigninComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.navigateToAppIfAlreadyAuth()
   }
 
   get loginFormControl() {

@@ -13,6 +13,7 @@ const routes: Routes = [
       path: '',
       loadChildren: () => import('./layouts/auth/auth.module').then(m => m.AuthModule)
     }],
+    canActivate: [AuthGuard]
   },
   {
     path: "app",

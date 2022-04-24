@@ -1,0 +1,37 @@
+@import '../../../../styles/variables.scss';
+
+.drawer-left{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -400px;
+    transition: all ease 1s;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: "100px""1fr";
+    grid-template-areas: "header""content";
+
+    &.active{
+        left: 0;
+    }
+
+    .header {
+        grid-area: header;
+        background-color: $green;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        h3 {
+            margin-left: 20px;
+            color: $white;
+        }
+    }
+    
+    .content {
+        grid-area: content;
+        background-color: $white;
+    }
+
+}

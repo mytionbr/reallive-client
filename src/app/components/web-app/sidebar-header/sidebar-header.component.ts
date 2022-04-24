@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActiveDrawerLeftService } from 'src/app/services/active-drawer-left.service';
 
 @Component({
   selector: 'app-sidebar-header',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activeDrawerLeftService: ActiveDrawerLeftService) { }
 
   ngOnInit(): void {
   }
 
-  alertClick(): void {
-    alert('hey man')
+  activeDrawerNewChat(activate: boolean): void {
+    if(activate)
+      this.activeDrawerLeftService.sendUpdate({isActive: true, title: 'Nova conversa'});
   }
 
 }

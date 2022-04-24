@@ -59,11 +59,5 @@ export class AuthService {
   isAuthenticated(): boolean{
     return !!this.tokenService.getToken();
   }
-
-  navigateToAppIfAlreadyAuth(): void {
-    const isAuth = this.isAuthenticated();
-
-    if(isAuth)  this.router.navigate(['/app']);
-  }
   
 }
