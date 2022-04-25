@@ -1,48 +1,11 @@
 @import "../../../../styles/_variables.scss";
+@import "../../../../styles/_list-item-style.scss";
 
 .channel-item{
-    width: 100%;
-    height: 80px;
-    border-top: solid 1px  $grey;
-    background-color: $white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-
-    &:hover{
-        filter: brightness(90%);
-    }
-    
-   
+   @extend .list-item;
 
     .channel-info{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        width: 80%;
-        margin-left: 10px;
-        overflow: hidden;
-        
-        h1, p {
-            width: calc(100% - 10px);
-            overflow: hidden;
-            white-space: nowrap; 
-            text-overflow: ellipsis;
-        }
-        
-        h1 {
-            font-size: 1.1rem;
-            font-weight: 400;
-
-        }
-
-        p{
-            font-size: 0.9rem;
-            color: $grey-dark;
-        }
+       @extend .item-info;
     }
 
     .channel-data{
