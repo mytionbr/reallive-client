@@ -1,0 +1,5 @@
+@import "../../../../styles/_list-style.scss";
+
+.user-list {
+  @extend .item-list;
+}

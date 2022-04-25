@@ -18,6 +18,8 @@ import { ChatMessagesComponent } from '../../components/web-app/chat-messages/ch
 import { ChatInputMessageComponent } from '../../components/web-app/chat-input-message/chat-input-message.component';
 import { ChatMessageComponent } from '../../components/web-app/chat-message/chat-message.component';
 import { DrawerLeftComponent } from '../../components/web-app/drawer-left/drawer-left.component';
+import { UserItemComponent } from '../../components/web-app/user-item/user-item.component';
+import { UserListComponent } from '../../components/web-app/user-list/user-list.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { DrawerLeftComponent } from '../../components/web-app/drawer-left/drawer
     ChatMessagesComponent,
     ChatInputMessageComponent,
     ChatMessageComponent,
-    DrawerLeftComponent
+    DrawerLeftComponent,
+    UserItemComponent,
+    UserListComponent
     
   ],
   imports: [

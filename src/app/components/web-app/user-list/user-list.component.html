@@ -1,0 +1,7 @@
+<div class="user-list">
+    <app-user-item 
+        *ngFor="let user of users"
+        [id]="user.id"
+        [image]="user.image"
+        [name]="user.name"></app-user-item>
+</div>

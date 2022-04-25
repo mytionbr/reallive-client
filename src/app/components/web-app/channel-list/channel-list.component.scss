@@ -1,11 +1,5 @@
-@import '../../../../styles/variables.scss';
-@import '../../../../styles/scroll-bar.scss';
+@import '../../../../styles/_list-style.scss';
 
 .channel-list{
-    height: 100%;
-    width: 100%;
-    background-color: $white;
-    overflow: auto;
-
-    @extend .custom-scroll-bar;
+    @extend .item-list;
 }

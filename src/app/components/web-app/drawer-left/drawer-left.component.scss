@@ -9,8 +9,9 @@
     transition: all ease 1s;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: "100px""1fr";
-    grid-template-areas: "header""content";
+    grid-template-rows: 100px 50px 1fr;
+    grid-template-areas: "header""search-box""content";
+    border-right: 1px solid $grey-middle;
 
     &.active{
         left: 0;
@@ -22,11 +23,19 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-
+        padding-left: 10px;
+        
         h3 {
             margin-left: 20px;
             color: $white;
         }
+    }
+    
+    .search-box {
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .content {

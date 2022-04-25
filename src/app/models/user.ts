@@ -13,3 +13,9 @@ export interface VerifyEmailInput {
   code: string;
   userId: string;
 }
+
+export interface UserItem {
+  id: string;
+  name: string;
+  image: string;
+}

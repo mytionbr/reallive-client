@@ -1,0 +1,11 @@
+@import './variables.scss';
+@import './scroll-bar.scss';
+
+.item-list {
+  height: 100%;
+  width: 100%;
+  background-color: $white;
+  overflow: auto;
+
+  @extend .custom-scroll-bar;
+}
