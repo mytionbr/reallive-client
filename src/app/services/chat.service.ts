@@ -11,6 +11,10 @@ export class ChatService {
     return CHANNELS;
   }
 
+  createChat(userId: string){
+    
+  }
+
   getChatById(id: string){
     return CHANNELS.find(chat => chat.id === id)
   }

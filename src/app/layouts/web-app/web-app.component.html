@@ -2,10 +2,10 @@
     <div class="sidebar-container">
         <app-sidebar></app-sidebar>
         <app-drawer-left></app-drawer-left>
-
     </div>
     <div class="channel-container">
-            <app-default-page  *ngIf="!currentChatId"></app-default-page>
+            <app-default-page  *ngIf="!currentChatId && !isLoading"></app-default-page>
+            <app-loading-page *ngIf="isLoading"></app-loading-page>
             <app-chat *ngIf="currentChatId" [currentChatId]="currentChatId" ></app-chat>
     </div>
 </div>

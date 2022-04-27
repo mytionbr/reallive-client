@@ -12,7 +12,6 @@ import { Channel } from '../../../models/channel';
 export class ChannelItemComponent implements OnInit {
   @Input() channel: Channel | undefined = undefined;
 
-
   isGroup = false
 
   constructor(private selectChatService: SelectChatService) {  

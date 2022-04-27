@@ -12,6 +12,7 @@ export class WebAppComponent implements OnInit {
 
   currentChatId: string | undefined = undefined;
   selectedChat: Subscription = new Subscription(); 
+  isLoading: boolean = true;
 
   constructor(private selectChat: SelectChatService, private chatService: ChatService) { 
   }
@@ -20,6 +21,7 @@ export class WebAppComponent implements OnInit {
     this.selectedChat = this.selectChat.getUpdate().subscribe(
       result => {
         this.currentChatId = result;
+        this.isLoading = false;
       }
     )
    
