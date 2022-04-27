@@ -15,3 +15,12 @@ export type Chat = {
         };
     };
 }
+
+export enum ChatType {
+    SINGLE, GROUP
+}
+
+export interface CreateChatInput {
+    directUserId: string
+    type: ChatType
+}

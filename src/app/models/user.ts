@@ -19,3 +19,8 @@ export interface UserItem {
   name: string;
   image: string;
 }
+
+export interface UserInfo {
+  token: string;
+  userId: string;
+}

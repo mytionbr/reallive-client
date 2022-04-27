@@ -81,10 +81,10 @@ export class SigninComponent implements OnInit {
   }
 
   successHandler(result: MutationResult) {
-    const token = result.data.login.token;
-    console.log(token)
-    if(token){
-      this.tokenService.storeToken(token);
+    const userInfo = result.data.login;
+    console.log(userInfo)
+    if(userInfo){
+      this.tokenService.storeToken(userInfo);
       this.clearForm();
       this.errors = ""
       this.router.navigate(['app'])

@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
 import { CHANNELS } from '../mocks/channels';
 import { Channel } from '../models/channel';
+import { CreateChatInput } from '../models/chat';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
 
+  constructor(private tokenService: TokenService) { 
+  }
+
   getChannels(){
     return CHANNELS;
   }
 
-  createChat(userId: string){
+  createSingleChat(createChatInput: CreateChatInput){
+    const { directUserId, type } = createChatInput;
+    const myUserId = this.tokenService.getToken();
     
   }
 
@@ -19,6 +26,5 @@ export class ChatService {
     return CHANNELS.find(chat => chat.id === id)
   }
 
-  constructor() { 
-  }
+  
 }
