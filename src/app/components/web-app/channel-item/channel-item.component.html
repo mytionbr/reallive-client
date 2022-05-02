@@ -1,5 +1,5 @@
 <div class="channel-item" (click)="onClick()">
-    <app-img-box src="{{channel?.img}}" alt="foto do canal"></app-img-box>
+    <app-img-box [defaultTittle]="channel?.title" [noImage]="!channel?.img" src="{{channel?.img}}" alt="foto do canal"></app-img-box>
     <div class="channel-info">
         <h1>
             {{channel?.title}}
@@ -11,7 +11,7 @@
         <p  class="updated-date" [class.active]="!channel?.lastMessages?.viewed">
             {{channel?.lastMessages?.lastMessage?.updatedAt}}
         </p>
-        <div class="count"  *ngIf="!channel?.lastMessages?.viewed">
+        <div class="count" *ngIf="!channel?.lastMessages?.viewed">
             <p>
                 {{channel?.lastMessages?.count}}
             </p>

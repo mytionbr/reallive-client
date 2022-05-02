@@ -3,5 +3,6 @@
         *ngFor="let user of users"
         [id]="user.id"
         [image]="user.image"
-        [name]="user.name"></app-user-item>
+        [name]="user.name"
+        (clickEvent)="createSingleNewChat($event)"></app-user-item>
 </div>

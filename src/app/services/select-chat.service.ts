@@ -8,8 +8,8 @@ export class SelectChatService {
 
   private selectedChat = new Subject<any>();
 
-  sendUpdate(value: string){
-    this.selectedChat.next(value);
+  sendUpdate(chatId: string){
+    this.selectedChat.next(chatId);
   }
 
   getUpdate(){

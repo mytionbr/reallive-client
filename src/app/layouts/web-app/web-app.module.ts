@@ -21,6 +21,7 @@ import { DrawerLeftComponent } from '../../components/web-app/drawer-left/drawer
 import { UserItemComponent } from '../../components/web-app/user-item/user-item.component';
 import { UserListComponent } from '../../components/web-app/user-list/user-list.component';
 import { LoadingPageComponent } from '../../components/web-app/loading-page/loading-page.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { LoadingPageComponent } from '../../components/web-app/loading-page/load
   ],
   imports: [
     CommonModule,
-    WebAppRoutingModule
+    WebAppRoutingModule,
+    SharedModule
   ]
 })
 export class WebAppModule { }

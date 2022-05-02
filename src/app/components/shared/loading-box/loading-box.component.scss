@@ -1,0 +1,19 @@
+@import "../../../../styles/_variables.scss";
+
+.spinner {
+  & > i {
+    color: $green;
+
+    &.sm {
+      font-size: 1.5rem;
+    }
+
+    &.md {
+      font-size: 2rem;
+    }
+
+    &.lg {
+      font-size: 5rem;
+    }
+  }
+}

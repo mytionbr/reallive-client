@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ChatService } from 'src/app/services/chat.service';
+import { LoadingService } from 'src/app/services/loading.service';
 import { SelectChatService } from 'src/app/services/select-chat.service';
 
 @Component({
@@ -11,23 +12,30 @@ import { SelectChatService } from 'src/app/services/select-chat.service';
 export class WebAppComponent implements OnInit {
 
   currentChatId: string | undefined = undefined;
-  selectedChat: Subscription = new Subscription(); 
-  isLoading: boolean = true;
+  selectedChatSubscription: Subscription = new Subscription(); 
+  loadingSubscription: Subscription = new Subscription(); 
+  isLoading: boolean = false;
 
-  constructor(private selectChat: SelectChatService, private chatService: ChatService) { 
+  constructor(private selectChat: SelectChatService, private chatService: ChatService, private loadingService: LoadingService) { 
   }
 
   ngOnInit(): void {
-    this.selectedChat = this.selectChat.getUpdate().subscribe(
+    this.selectedChatSubscription = this.selectChat.getUpdate().subscribe(
       result => {
         this.currentChatId = result;
         this.isLoading = false;
+      }
+    )
+    this.loadingSubscription = this.loadingService.getUpdate().subscribe(
+      result => {
+        this.isLoading = result.isLoading;
       }
     )
    
   }
 
   ngOnDestroy(): void {
-    this.selectedChat.unsubscribe();
+    this.selectedChatSubscription.unsubscribe();
+    this.loadingSubscription.unsubscribe();
   }
 }

@@ -82,7 +82,6 @@ export class SigninComponent implements OnInit {
 
   successHandler(result: MutationResult) {
     const userInfo = result.data.login;
-    console.log(userInfo)
     if(userInfo){
       this.tokenService.storeToken(userInfo);
       this.clearForm();

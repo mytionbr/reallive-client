@@ -1,5 +1,17 @@
 <div class="channel-list">
-    <app-channel-item 
-        *ngFor="let channel of channels" 
-        [channel]="channel"></app-channel-item>
+    <ng-container *ngIf="!loading">
+        <app-channel-item *ngFor="let channel of channels" [channel]="channel"></app-channel-item>
+    </ng-container>
+    <ng-container *ngIf="loading">
+        <div class="loading">
+            <app-loading-box size="md"></app-loading-box>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!loading && isEmpty">
+        <div class="default">
+            <h3>
+                Comece uma nova conversa
+            </h3>
+        </div>
+    </ng-container>
 </div>

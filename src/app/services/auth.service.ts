@@ -11,24 +11,6 @@ import { TokenService } from './token.service';
 export class AuthService {
   constructor(private apollo: Apollo, private tokenService: TokenService, private router: Router) {}
 
-  getAll() {
-    this.apollo
-      .watchQuery({
-        query: gql`
-          {
-            findAll {
-              id
-              nickname
-              email
-            }
-          }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        console.log(result);
-      });
-  }
-
   register(registerUserInput: RegisterUserInput ) {
     const { nickname, password, email } = registerUserInput;
     const result = this.apollo.mutate({

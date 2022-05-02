@@ -6,7 +6,7 @@ import { UserInfo } from '../models/user';
 })
 export class TokenService {
 
-  readonly tokenStorage = 'reallive-use'
+  private readonly tokenStorage = 'reallive-use'
 
   constructor() { }
 

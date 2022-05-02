@@ -1,3 +1,10 @@
 <div class="img-box">
-    <img src="{{ src }}" alt="{{ alt }}">
+    <ng-container *ngIf="!noImage">
+        <img [src]="src" [alt]="alt">
+    </ng-container>
+    <ng-container *ngIf="noImage">
+        <div class="default-desc">
+            <h3>{{letter}}</h3>
+        </div>
+    </ng-container>
 </div>
