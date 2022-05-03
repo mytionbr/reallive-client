@@ -7,6 +7,7 @@ import { FIND_CHAT_ROOMS, FIND_CHAT_ROOM_WITH_MESSAGES } from '../graphql/querie
 import { CHANNELS } from '../mocks/channels';
 import { Channel } from '../models/channel';
 import { CreateChatInput, ChatType, CreateChatOutput } from '../models/chat';
+import { AuthService } from './auth.service';
 import { LoadingService } from './loading.service';
 import { SelectChatService } from './select-chat.service';
 import { TokenService } from './token.service';
@@ -19,8 +20,8 @@ export class ChatService {
     private tokenService: TokenService,
     private apollo: Apollo,
     private loadingService: LoadingService,
-    private selectChatService: SelectChatService
-  ) {}
+    private selectChatService: SelectChatService,
+    private authService: AuthService  ) {}
 
   getChannels() {
     const token = this.tokenService.getToken();
@@ -38,8 +39,7 @@ export class ChatService {
   }
 
   createSingleChat(directUserId: string) {
-    const userInfo = this.tokenService.getToken();
-    const currentUserId = userInfo?.userId;
+    const currentUserId = this.authService.getUserId()
 
     if (!currentUserId) throw new Error('Usuário não autenticado');
 
@@ -64,8 +64,7 @@ export class ChatService {
   }
 
   getChatById(chatRoomId: string) {
-    const userInfo = this.tokenService.getToken();
-    const currentUserId = userInfo?.userId;
+    const currentUserId = this.authService.getUserId()
     const result = this.apollo.query({
       query: FIND_CHAT_ROOM_WITH_MESSAGES,
       variables: {chatRoomId, currentUserId},

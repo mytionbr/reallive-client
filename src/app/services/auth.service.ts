@@ -42,4 +42,9 @@ export class AuthService {
     return !!this.tokenService.getToken();
   }
   
+  getUserId(): string | undefined {
+    const userInfo = this.tokenService.getToken();
+    const currentUserId = userInfo?.userId;
+    return currentUserId;
+  }
 }

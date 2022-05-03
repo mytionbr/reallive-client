@@ -11,7 +11,7 @@ export class ChatMessagesComponent implements OnInit {
 
   messages: Message[] = [];
 
-  currentUserId: string = '1'
+  currentUserId?: string;
 
   constructor(private messageService: MessageService) { }
 
