@@ -16,3 +16,15 @@ query FindChatRooms($userId: String!) {
  }
 }
 `
+
+export const FIND_CHAT_ROOM_WITH_MESSAGES = gql`
+query FindChatRoomWithMessages($chatRoomId: String!, $currentUserId: String!) {
+  findChatRoomWithMessages(chatRoomId: $chatRoomId, currentUserId: $currentUserId)
+  {
+    id createdAt img title type updatedAt usersId 
+    messages {
+      id content chatRoomId createdAt received userId viewed
+    }
+  }
+}
+`

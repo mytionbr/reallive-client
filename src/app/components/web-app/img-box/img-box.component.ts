@@ -16,8 +16,6 @@ export class ImgBoxComponent implements OnInit {
 
   ngOnInit(): void {
     this.showDefaultLetter();
-    console.log(this.noImage)
-    console.log(this.defaultTittle)
   }
 
   showDefaultLetter(){

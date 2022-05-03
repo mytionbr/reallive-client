@@ -9,7 +9,7 @@
     </div>
     <div class="channel-data">
         <p  class="updated-date" [class.active]="!channel?.lastMessages?.viewed">
-            {{channel?.lastMessages?.lastMessage?.updatedAt}}
+            {{updatedAt}}
         </p>
         <div class="count" *ngIf="!channel?.lastMessages?.viewed">
             <p>

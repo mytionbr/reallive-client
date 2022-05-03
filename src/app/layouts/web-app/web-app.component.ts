@@ -23,7 +23,7 @@ export class WebAppComponent implements OnInit {
     this.selectedChatSubscription = this.selectChat.getUpdate().subscribe(
       result => {
         this.currentChatId = result;
-        this.isLoading = false;
+        this.loadingService.sendUpdate(true);
       }
     )
     this.loadingSubscription = this.loadingService.getUpdate().subscribe(

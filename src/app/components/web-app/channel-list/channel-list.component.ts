@@ -28,7 +28,6 @@ export class ChannelListComponent implements OnInit {
         const data = result.data as any;
         this.channels = data.findAllChatRoomsByUserId;
         this.loading = false;
-        console.log(result)
         if (this.channels.length < 1) {
           this.isEmpty = true;
         }

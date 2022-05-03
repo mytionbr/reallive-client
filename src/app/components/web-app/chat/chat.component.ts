@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ChatService } from 'src/app/services/chat.service';
+import { LoadingService } from 'src/app/services/loading.service';
 import { SelectChatService } from 'src/app/services/select-chat.service';
 import { Chat } from '../../../models/chat';
 
@@ -11,10 +12,10 @@ import { Chat } from '../../../models/chat';
 })
 export class ChatComponent implements OnInit, OnChanges {
 
-  @Input() currentChatId: string | undefined;
-  chat: Chat | undefined; 
+  @Input() currentChatId?: string;
+  chat?: Chat; 
   
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService, private loadingService: LoadingService) {}
   
   ngOnChanges(changes: SimpleChanges): void {
     const updatedChatId = changes['currentChatId'].currentValue
@@ -31,7 +32,17 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   updateChat(chatId: string): void {
-    this.chat = this.chatService.getChatById(chatId);
+    this.loadingService.sendUpdate(true);
+    this.chatService.getChatById(chatId)
+      .subscribe({
+        next: (result) => {
+          const data = result.data as any
+          const chatInfo = data.findChatRoomWithMessages
+          this.chat = chatInfo;
+          this.loadingService.sendUpdate(false);
+        },
+        error: (err) => console.log(err)
+      });
   }
 
 }
