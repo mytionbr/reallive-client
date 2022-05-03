@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { MessageService } from 'src/app/services/message.service';
 import { Message } from '../../../models/message';
 
@@ -9,14 +10,15 @@ import { Message } from '../../../models/message';
 })
 export class ChatMessagesComponent implements OnInit {
 
-  messages: Message[] = [];
+  @Input()
+  messages?: any[] = [];
 
   currentUserId?: string;
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.messages = this.messageService.getMessages();
+    this.currentUserId = this.authService.getUserId();
   }
 
 }

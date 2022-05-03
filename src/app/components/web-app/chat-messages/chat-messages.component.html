@@ -1,7 +1,7 @@
 <div class="chat-messages">
-        <app-chat-message 
-        *ngFor="let message of messages"
-        class="{{currentUserId === message.user.id ? 'right' : 'left'}}"
-            [message]="message"
-            [isMy]="currentUserId === message.user.id"></app-chat-message>
+    <ng-container *ngIf="messages">
+        <app-chat-message *ngFor="let message of messages"
+            class="{{currentUserId === message?.userId ? 'right' : 'left'}}" [message]="message"
+            [isMy]="currentUserId === message?.userId"></app-chat-message>
+    </ng-container>
 </div>

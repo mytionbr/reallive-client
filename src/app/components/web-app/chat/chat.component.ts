@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Message } from 'src/app/models/message';
 import { ChatService } from 'src/app/services/chat.service';
 import { LoadingService } from 'src/app/services/loading.service';
 import { SelectChatService } from 'src/app/services/select-chat.service';
@@ -13,7 +14,8 @@ import { Chat } from '../../../models/chat';
 export class ChatComponent implements OnInit, OnChanges {
 
   @Input() currentChatId?: string;
-  chat?: Chat; 
+  chat?: any; 
+  messages?: any[];
   
   constructor(private chatService: ChatService, private loadingService: LoadingService) {}
   
@@ -39,6 +41,8 @@ export class ChatComponent implements OnInit, OnChanges {
           const data = result.data as any
           const chatInfo = data.findChatRoomWithMessages
           this.chat = chatInfo;
+          const { messages } = chatInfo;
+          this.messages = messages;
           this.loadingService.sendUpdate(false);
         },
         error: (err) => console.log(err)
